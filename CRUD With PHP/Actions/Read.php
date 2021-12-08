@@ -75,7 +75,7 @@
             border: 2px solid #fff;
             margin-top: 6rem;
             text-decoration:none;
-            margin-left:1rem;
+            margin-left:2.5rem;
             font-weight:700;
         }
         .btn:hover{
@@ -108,7 +108,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="thh">Date de la Creation :</th>
+                <th class="thh">Date Creation :</th>
                 <td>
                     <?php echo $row['CreateDate']; ?>
                 </td>

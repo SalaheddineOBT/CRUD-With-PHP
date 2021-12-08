@@ -1,17 +1,11 @@
 <?php 
-
     include_once('./../Database/Database.php');
-
     if(empty($_SESSION['username'])):
         header('location:Login.php');
     endif;
-
     $db=new Database();
-
     $con=$db->Connection();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,13 +33,10 @@
         }
         .tbl{
             width:100%;
-            height: 59.7vh;
+            height: 55.6vh;
             margin: auto;
             overflow-y: auto;
             margin-top:3rem ;
-        }
-        tr:nth-child(even){
-            background:#eee;
         }
         th{
             padding-top: .8rem;
@@ -53,6 +44,9 @@
             color:#fff;
             font-size:1.15rem;
             background-color: #255176;
+        }
+        tr:nth-child(even){
+            background: #00416A;
         }
         td:first-child{
             padding-left:1rem;
@@ -166,9 +160,7 @@
     </style>
 </head>
 <body>
-
 <?php
-
     $sql="SELECT * FROM users";
     $stmt=$con->prepare($sql);
     $stmt->execute(); 
@@ -191,20 +183,20 @@
                 <th>Date de Création</th>
                 <th>Opérations</th>
             </tr>
-
 <?php
         if($stmt->rowCount()):
-
         while($row=$stmt->fetch(PDO::FETCH_ASSOC)):
-
-            echo '<tr>';
+?>
+        <tr>
+<?php
             echo '<td>'.$row['ID'].'</td>';
             echo '<td>'.$row['UserName'].'</td>';
             echo '<td>'.$row['Email'].'</td>';
             echo '<td>'.$row['CreateDate'].'</td>';
             echo '<td><a class="Read" href="Read.php?id='.$row['ID'].'" title="Read User" >Read</a> <a class="Updatee" href="Update.php?id='.$row['ID'].'" title="Update User" >Editer</a> <a class="Delete" id="btndel" title="Delete User" href="Delete.php?id='.$row['ID'].'" >Delete</a></a></td>';
-            echo '</tr>';
-
+?>
+        </tr>
+<?php
         endwhile;
     endif;
 

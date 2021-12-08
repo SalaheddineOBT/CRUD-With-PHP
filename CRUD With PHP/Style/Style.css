@@ -188,3 +188,6 @@
 .LoginPage h2{
     text-align: center;
 }
+tr:nth-child(4n){
+    background: #00416A;
+}

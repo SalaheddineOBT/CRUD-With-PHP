@@ -56,6 +56,7 @@
                 if($stmt->execute()):
                     //header('location:Home.php');
                     $err['success']='Success Creation .';
+                    $username=$email=$password=$confirm='';
                 endif;
             endif;
         endif;
