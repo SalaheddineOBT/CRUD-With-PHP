@@ -8,11 +8,19 @@
         if(isset($_POST['delete'])):
 
             $id=$_REQUEST['id'];
-
-            $sql="DELETE FROM users WHERE ID=$id";
-            $stmt=$con->prepare($sql);
-            if($stmt->execute()):
-                header('location:Home.php');
+            if($_SESSION['ID']==$id):
+                $sql="DELETE FROM users WHERE ID=$id";
+                $stmt=$con->prepare($sql);
+                if($stmt->execute()):
+                    session_destroy();
+                    header('location:Login.php');
+                endif;
+            else:
+                $sql="DELETE FROM users WHERE ID=$id";
+                $stmt=$con->prepare($sql);
+                if($stmt->execute()):
+                    header('location:Home.php');
+                endif;
             endif;
         endif;
     endif;

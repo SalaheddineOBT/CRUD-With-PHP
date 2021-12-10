@@ -48,6 +48,7 @@
                     if($check):
 
                         $_SESSION['username']=$row['UserName'];
+                        $_SESSION['ID']=$row['ID'];
 
                         header('location:Home.php');
                     
@@ -75,6 +76,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="./../Style/Style.css">
+
+    <style>
+        .LoginPage{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background: #00416A;
+            background: -webkit-linear-gradient(to bottom, #E4E5E6, #00416A);
+            background: linear-gradient(to bottom, #E4E5E6, #00416A);
+
+        }
+        .LoginPage form{
+            padding: 1.5rem;
+            width: 23rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            background:#fff
+        }
+        .LoginPage a{
+            font-size: 1.3rem;
+            color:#333;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        .LoginPage a:hover{
+            text-decoration: underline;
+        }
+        .inputs{
+            padding: .4rem;
+            outline: none;
+            border: none;
+            width: 100%;
+            border: 1px solid #444;
+            font-size: 1.2rem;
+            border-radius: .4rem;
+        }
+    </style>
 </head>
 <body>
     <div class="LoginPage">

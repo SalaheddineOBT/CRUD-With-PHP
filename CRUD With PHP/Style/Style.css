@@ -29,8 +29,8 @@
     align-items: center;
     justify-content: center;
     background: rgba(137, 37, 62, 0.479);
-    background: -webkit-linear-gradient(to top, #89253ec0, #3a61869a);
-    background: linear-gradient(to top, #89253eb4, #3a6186b2);
+    background: -webkit-linear-gradient(to bottom, #89253ec0, #3a61869a);
+    background: linear-gradient(to bottom, #89253eb4, #3a6186b2);
 }
 .Create{
     background: #a4795d;
@@ -45,8 +45,8 @@
 }
 .Update{
     background: #00416A;
-    background: -webkit-linear-gradient(to top, #E4E5E6, #00416A);
-    background: linear-gradient(to top, #E4E5E6, #00416A);
+    background: -webkit-linear-gradient(to bottom, #E4E5E6, #00416A);
+    background: linear-gradient(to bottom, #E4E5E6, #00416A);
     display: grid;
     grid-template-columns: 100%;
     padding: 2rem;
@@ -87,6 +87,7 @@
     outline: none;
     border: none;
     width: 100%;
+    border: 1px solid #444;
     font-size: 1.2rem;
     border-radius: .4rem;
 }
@@ -178,7 +179,7 @@
 }
 .LoginPage a{
     font-size: 1.3rem;
-    color:#eee;
+    color:#333;
     margin-top: 1rem;
     font-weight: 600;
 }

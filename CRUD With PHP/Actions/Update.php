@@ -22,6 +22,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update User</title>
     <link rel="stylesheet" href="./../Style/Style.css">
+    <style>
+        .Update{
+            background: #00416A;
+            background: -webkit-linear-gradient(to top, #E4E5E6,#00416A);
+            background: linear-gradient(to bottom, #E4E5E6, #00416A);
+            display: grid;
+            grid-template-columns: 100%;
+            padding: 2rem;
+            width: 25rem;
+            box-shadow:2px 3px 13px 7px rgba(0,0,0,0.53);
+        }
+        label{
+            color:#FFF;
+        }
+    </style>
 </head>
 <body>
 <div class="container">

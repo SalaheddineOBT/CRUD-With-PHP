@@ -36,7 +36,7 @@
             height: 55.6vh;
             margin: auto;
             overflow-y: auto;
-            margin-top:3rem ;
+            margin-top:2rem ;
         }
         th{
             padding-top: .8rem;
@@ -97,6 +97,9 @@
             padding: .6rem;
             border: 2px solid #255176;
             background: #255176;
+            width:30%;
+            text-align:center;
+            cursor:pointer;
             color: white;
             box-shadow:.5px .5px .2px #eee;
        }
@@ -157,7 +160,25 @@
              width: 100%;
             height:100vh;
         }
-    </style>
+        .cont{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .bx{
+            text-align:right;
+        }
+        input[type="text"]{
+            width: 16rem;
+            padding:.5rem;
+            margin: auto;
+            margin-top: 1.3rem;
+            border-radius: .3rem;
+            border:none;
+            font-weight: 600;
+            font-size: 1.1rem;   
+            box-shadow: .1px .3px .2px .5px #000;
+        }
+</style>
 </head>
 <body>
 <?php
@@ -165,6 +186,7 @@
     $stmt=$con->prepare($sql);
     $stmt->execute(); 
 ?>
+
     <div class="hi">
     <div class="inform">
     <span class="tit">Dashboard</span>
@@ -186,18 +208,18 @@
 <?php
         if($stmt->rowCount()):
         while($row=$stmt->fetch(PDO::FETCH_ASSOC)):
-?>
-        <tr>
-<?php
+            echo '<tr>';
             echo '<td>'.$row['ID'].'</td>';
             echo '<td>'.$row['UserName'].'</td>';
             echo '<td>'.$row['Email'].'</td>';
             echo '<td>'.$row['CreateDate'].'</td>';
             echo '<td><a class="Read" href="Read.php?id='.$row['ID'].'" title="Read User" >Read</a> <a class="Updatee" href="Update.php?id='.$row['ID'].'" title="Update User" >Editer</a> <a class="Delete" id="btndel" title="Delete User" href="Delete.php?id='.$row['ID'].'" >Delete</a></a></td>';
-?>
-        </tr>
-<?php
+            echo '</tr>';
         endwhile;
+    else:
+        echo "<tr>";
+        echo "<td colspan='5'>Empty DataBase</td>";
+        echo "</tr>";
     endif;
 
 ?>
