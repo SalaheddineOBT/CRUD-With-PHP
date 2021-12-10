@@ -111,7 +111,7 @@
             background: rgba(238, 238, 238, 0.89);
             padding:1.1rem;
             display:grid;
-            grid-template-columns:1fr 1fr 1fr;
+            grid-template-columns:.5fr 2fr .5fr;
             
         }
         .inform a{
